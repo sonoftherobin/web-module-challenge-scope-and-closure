@@ -71,9 +71,20 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    let rando=(Math.random());
+    if(rando<=.33){
+      rando=0 
+    }
+    else if(rando <= .66){
+      rando=1
+    }
+    else{
+      rando=2
+    }
+    return rando
 }
+
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -90,9 +101,23 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(callback, totalInn){
+
+  const score ={Home:callback(), Away:callback()};
+   
+  const final={Home:callback(),Away:callback()};
+  if(totalInn<9){
+  for(let i=0; i<totalInn; i++){
+callback(totalInn);
+return score
+  }
 }
+else{
+  return  final;
+}
+}
+
+//console.log(finalScore(inning,7));
 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -108,11 +133,11 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-
+function getInningScore(callback) {
+ const v= finalScore(inning,9);
+return v
 }
-
+getInningScore(inning);
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
