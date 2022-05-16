@@ -30,11 +30,18 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  They will return the samer thing hoewever with counter2 the variable count has global scope, 
+  but in counter1 the variablencount is only accessable within the function. (function scope).
+  counter1 is also a variable that calls another function, whereas counter2 is a function itself.
+  Lastly the code is never ran for counter2, its never invoked/called.
   
   2. Which of the two uses a closure? How can you tell?
+  counter1 uses closure, different sets of curly brackets and the varisable is isolated in function scope. 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     Counter2 would be preferable if you needed to access the variable count somewhere else in the code.
+     Counter1 would be preferable in most other situations.
 */
 
 // counter1 code
